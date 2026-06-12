@@ -1,0 +1,22 @@
+# Python
+venv/
+venv311/
+.venv/
+__pycache__/
+*.pyc
+
+# Node
+node_modules/
+
+
+# Environment variables
+.env
+
+# Build folders
+dist/
+build/
+.next/
+
+# IDE
+.vscode/
+.idea/

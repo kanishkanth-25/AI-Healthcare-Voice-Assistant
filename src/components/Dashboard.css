@@ -1,0 +1,286 @@
+/* Dashboard.css */
+
+.dashboard-container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 2rem auto;
+  padding: 2.5rem;
+  background: var(--glass-card);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 1.25rem;
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--shadow-lg);
+  animation: fadeIn 0.4s ease-out;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--glass-border);
+  padding-bottom: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.dashboard-title {
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  font-family: 'Montserrat', sans-serif;
+  background: linear-gradient(to right, #ffffff, #a5b4fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.header-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+/* Base Buttons */
+.btn-primary, .btn-secondary {
+  padding: 0.75rem 1.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 0.625rem;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary) 0%, #4f46e5 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.5);
+  background: linear-gradient(135deg, #4f46e5 0%, #4338ca 100%);
+}
+
+.btn-secondary {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  color: var(--text-main);
+}
+
+.btn-secondary:hover {
+  border-color: var(--glass-border-focus);
+  background: var(--glass-bg-hover);
+  transform: translateY(-1px);
+}
+
+/* Layout Content Grid */
+.dashboard-content-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 992px) {
+  .dashboard-content-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Profiles and Information Cards */
+.patient-information-section,
+.patient-medical-history-section {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--glass-border);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: var(--shadow-sm);
+  transition: border-color var(--transition-normal);
+}
+
+.patient-information-section:hover,
+.patient-medical-history-section:hover {
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.patient-information-section h2,
+.patient-medical-history-section h2 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #a5b4fc;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: -0.02em;
+}
+
+/* Patient info grids */
+.patient-info-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 576px) {
+  .patient-info-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.patient-info-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.patient-info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.patient-info-item strong {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+
+.patient-info-item span {
+  font-size: 1.05rem;
+  color: var(--text-main);
+  font-weight: 500;
+}
+
+.badge-blood {
+  background: rgba(239, 68, 68, 0.15);
+  color: #fca5a5 !important;
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  padding: 0.2rem 0.6rem;
+  border-radius: 6px;
+  width: fit-content;
+  font-size: 0.9rem !important;
+  font-weight: 700 !important;
+}
+
+/* Medical History Details */
+.medical-history-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 576px) {
+  .medical-history-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.medical-history-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.medical-history-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  background: rgba(255, 255, 255, 0.01);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.medical-history-item strong {
+  font-size: 0.9rem;
+  color: #a5b4fc;
+  font-weight: 600;
+}
+
+.medical-history-item span {
+  font-size: 0.95rem;
+  color: var(--text-main);
+  line-height: 1.5;
+}
+
+/* Help / Triage Banner */
+.appointment-help-section {
+  grid-column: 1 / -1;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(168, 85, 247, 0.1) 100%);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  padding: 2rem;
+  border-radius: 1rem;
+  text-align: center;
+  margin-top: 2rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.appointment-help-section h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.appointment-help-section p {
+  color: var(--text-muted);
+  max-width: 600px;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+.start-triage-btn {
+  margin-top: 0.5rem;
+  padding: 0.85rem 2rem;
+  font-size: 1.05rem;
+}
+
+/* Spinner / Loading state */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  min-height: 300px;
+  font-size: 1.1rem;
+  color: var(--text-muted);
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid rgba(255, 255, 255, 0.1);
+  border-left-color: var(--primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.error-message-container {
+  padding: 2rem;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #fca5a5;
+  border-radius: 12px;
+  text-align: center;
+  max-width: 500px;
+  margin: 2rem auto;
+}
+
+/* Animations */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
